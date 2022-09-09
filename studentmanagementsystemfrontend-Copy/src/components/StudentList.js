@@ -1,10 +1,7 @@
-import React from "react";
-import { Card, Container, Table } from "react-bootstrap";
-import { useState,useEffect } from "react";
 import axios from "axios";
 
 export default function StudentList() {
-  const [student, setStudent] = useState([]);
+const [student, setStudent] = useState([]);
 
 
   return (
@@ -28,13 +25,13 @@ export default function StudentList() {
                 <td>{student.name}</td>
                 <td>{student.address}</td>
                 <td>
-                  <button type="butoon" className="btn btn-dark" >Edit</button>
+                  <button type="butoon" className="btn btn-primary" >Edit</button>
                   &nbsp;&nbsp;
                   <button type="butoon" className="btn btn-danger">Delete</button>
                 </td>
               </tr>
               ))}
-
+         
             </tbody>
           </Table>
         </Card.Body>
