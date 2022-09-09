@@ -4,14 +4,18 @@ import in.ac.charusat.studentmgmtsystem.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
-
 @RestController
 @CrossOrigin(origins = "http://localhost:3004")
 public class StudentController {
 
     @Autowired
     StudentRepository studentRepository;
+
+    @GetMapping
+    public String displayWelcomeMessage(){
+        return "<center><h1>Welcome to the Spring Boot Security!!!!</h1></center>";
+    }
+
     // Get the list of all student
     @GetMapping("/listPatient")
     public List<Student> getAllStudents() 
