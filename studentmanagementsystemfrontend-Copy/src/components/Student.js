@@ -31,10 +31,9 @@ export default function Student() {
           }
         })
         .catch(error => alert(error));
-        window.location.reload(false);
-        
-      }
+        window.location.reload(false);;
 
+      }
 
   return (
     <div  className="my-5">
