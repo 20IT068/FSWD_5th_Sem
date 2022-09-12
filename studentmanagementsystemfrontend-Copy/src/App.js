@@ -1,19 +1,23 @@
-import Footer from './components/Footer';
-import NavigationBar from './components/NavigationBar';
+import logo from './logo.svg';
+import './App.css';
 import Student from './components/Student';
 import StudentList from './components/StudentList';
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
-
+import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
+import Container from 'react-bootstrap/Container';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
       <Router>
       <NavigationBar/>
-      <Routes>
-        <Route path="/" element={<Navigate to="/student" />} />
-        <Route path='student' element={<Student/>}/>
-        <Route path='liststudents' element={<StudentList/>}/>
+      <Container>
+        <Routes>
+      <Route path="student" element={<Student/>}/>
+      <Route path="student/:studentId" element={<Student />}/>
+      <Route path="listStudents" element={<StudentList/>}/>
       </Routes>
+      </Container>
       <Footer/>
       </Router>
     </div>
